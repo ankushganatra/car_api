@@ -41,3 +41,30 @@ This endpoint should fetch the 10 closest cars from the database and return them
 - Use this repository to build your solution.
 - The solution should perform well regardless of the number of records
 - Don't forget the instructions for testing and running the code.
+
+
+
+Running the code: 
+
+Setting up DB: 
+
+For the technology stack: MongoDB, Sinatra are used to implement the solution. You can update the MongoDB URL from config/environment.rb under the 'development','production' section. 
+
+
+Run the app: 
+
+Once you do bundle install, you can run the application by command `rackup config.ru` or `shotgun config.ru`
+
+DB Seed: 
+Assuming the app is running on localhost:9393, you can seed the data with following commnad executed on other terminal
+
+thor db_seed:dump_json "http://localhost:9393/public/data.json"
+
+
+
+Testing Result: 
+Once the data is inserted in DB you can verify results from below URL 
+
+http://localhost:9393/cars?location=51.5444204,-0.22707
+
+(Again this is assuming you are running the application in local at port 9393)
