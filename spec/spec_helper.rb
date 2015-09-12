@@ -1,19 +1,28 @@
-require_relative "../config/environment"
- 
+require 'factory_girl'
 require 'rack/test'
 require 'rspec'
  
 # set test environment
-set :environment, :test
-set :run, false
-set :raise_errors, true
-set :logging, false
-
 
 RSpec.configure do |config|
+
+  ENV['RACK_ENV'] = 'test'
+  
+  require_relative "../config/environment"
+  
+  set :run, false
+  set :raise_errors, true
+  set :logging, false
+
+  config.include FactoryGirl::Syntax::Methods
+
   config.include Rack::Test::Methods
 
+  #config.include Factory::Syntax::Methods
+
   config.before(:each) do
+    FactoryGirl.factories.clear
+    FactoryGirl.find_definitions
     $db = []
   end 
 

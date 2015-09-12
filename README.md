@@ -1,10 +1,4 @@
 # Cars API
-
-
-As an extension to our current backend infrastructure, we decided to create a car-sharing API to help us to show the best options around an user’s position.
-
-In order to show cars on a map, all we need is a name, description and position of the vehicle. And it is up to the api to organize different data sources and provide a single response via an endpoint.
-
 ## Instructions
 
 In this exercise, your job is to build a simple API/webservice that expose one single endpoint called `/cars` that receives a GET with the location parameter as the example below:
@@ -35,20 +29,11 @@ This endpoint should fetch the 10 closest cars from the database and return them
 }
 ````
 
-- You can use the file `data.json` as seed for your database
-- We suggest you to save this content in a database, so you can sort and filter them easily.
-- The endpoint should return the correct status codes for a success request and a failed one.
-- Use this repository to build your solution.
-- The solution should perform well regardless of the number of records
-- Don't forget the instructions for testing and running the code.
-
-
-
 Running the code: 
 
 Setting up DB: 
 
-For the technology stack: MongoDB, Sinatra are used to implement the solution. You can update the MongoDB URL from config/environment.rb under the 'development','production' section. 
+For the technology stack: MongoDB, Sinatra are used to implement the solution. You can update the MongoDB URL from config/environment.rb 
 
 
 Run the app: 
@@ -66,5 +51,8 @@ Testing Result:
 Once the data is inserted in DB you can verify results from below URL 
 
 http://localhost:9393/cars?location=51.5444204,-0.22707
+
+View per page.
+http://localhost:9393/cars?location=51.5444204,-0.22707&page=0
 
 (Again this is assuming you are running the application in local at port 9393)

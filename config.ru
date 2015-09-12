@@ -16,6 +16,5 @@ Dir.glob('./app/{models,controllers}/*.rb').each { |file| require file }
 
 run Rack::URLMap.new("/cars" => CarsController)
 
-#map('/') { run ApplicationController }
 
 map ("/public") {  run Rack::Directory.new("./public") }

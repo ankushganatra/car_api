@@ -18,6 +18,8 @@ class CarLocation
 
   timestamps!
 
+  PER_PAGE = 10
+
   def self.dump(file_path)
     uri = URI.parse(file_path)
     response = Net::HTTP.get_response(uri)
@@ -34,8 +36,10 @@ class CarLocation
     end
   end
 
-  def self.near(point, distance)
-    where(coordinates: {'$near' => point, '$maxDistance' => distance}).take(10)
+  def self.near(point, distance, offset)
+    where(coordinates: {'$near' => point, '$maxDistance' => distance}).offset(offset*PER_PAGE).limit(PER_PAGE)
   end
-
+  def self.get_all(offset)
+    skip(offset * PER_PAGE).limit(PER_PAGE)
+  end
 end

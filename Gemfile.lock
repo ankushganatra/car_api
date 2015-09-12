@@ -17,6 +17,8 @@ GEM
     builder (3.2.2)
     coderay (1.1.0)
     diff-lcs (1.2.5)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
     hashie (3.4.2)
     i18n (0.7.0)
     jbuilder (2.3.1)
@@ -91,22 +93,23 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson_ext
-  hashie
-  jbuilder_pagination
-  mongo
-  mongo_mapper
+  bson_ext (= 1.12.3)
+  factory_girl
+  hashie (= 3.4.2)
+  jbuilder_pagination (= 1.0.0)
+  mongo (= 1.12.3)
+  mongo_mapper (= 0.13.1)
   pry
   pry-nav
-  rack-rest_api_versioning
+  rack-rest_api_versioning (= 0.0.2)
   rack-test
   rake
   rspec
-  shotgun
-  sinatra
-  sinatra-contrib
-  thor
-  tilt-jbuilder (>= 0.7.0)
+  shotgun (= 0.9.1)
+  sinatra (= 1.4.6)
+  sinatra-contrib (= 1.4.6)
+  thor (= 0.19.1)
+  tilt-jbuilder (= 0.7.0)
 
 BUNDLED WITH
    1.10.5

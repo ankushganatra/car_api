@@ -15,6 +15,5 @@ class ApplicationController < Sinatra::Base
 	set :root, File.expand_path('.')
 	# sets the view directory correctly
 	set :views, Proc.new { File.join(root, "app/views") }
-
   
 end
